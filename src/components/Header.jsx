@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 function Header() {
     return (
         <>
-            <div className='bg-gray-400'>
+            <div className='bg-gray-400 sticky top-0'>
                 <div className='text-xl  font-semibold'>Header:</div>
                 <div className='text-blue-600 space-x-2'>
                     <Link to='/'>Home</Link>
