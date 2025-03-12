@@ -2,16 +2,14 @@ import React from "react";
 
 const Input = (props) => {
     const { size, color, placeholder } = props;
-    const defaultClass = "flex items-center rounded-md size-fit px-1 py-1 border-2 border-solid";
+    const defaultClass = "flex items-center rounded-md size-fit px-1 py-1 border-1";
     const classes = {
         colors: {
             primary: {
-                input: "bg-white",
-                text: ".placeholder-white",
+                input: "bg-white text-green-700 text-sm",
             },
             secondary: {
-                input: "bg-[#B6B4A4]",
-                text: "placeholder-white",
+                input: "bg-[#B6B4A4] text-red-400 text-3xl",
             },
         },
         sizes: {
