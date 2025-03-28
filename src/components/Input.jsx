@@ -1,16 +1,12 @@
 import React from "react";
 
 const Input = (props) => {
-    const { size, color, placeholder } = props;
+    const { size, color, placeholder, value, onChange } = props;
     const defaultClass = "flex items-center rounded-md size-fit px-1 py-1 border-1";
     const classes = {
         colors: {
-            primary: {
-                input: "bg-white text-green-700 text-sm",
-            },
-            secondary: {
-                input: "bg-[#B6B4A4] text-red-400 text-3xl",
-            },
+            primary: "bg-white text-green-700 text-sm",
+            secondary: "bg-[#B6B4A4] text-red-400 text-3xl"
         },
         sizes: {
             small: "text_base",
@@ -19,8 +15,8 @@ const Input = (props) => {
         }
     }
     return (
-        <input type="text"
-            className={defaultClass + " " + classes.sizes[size] + " " + classes.colors[color].input}
+        <input type="text" value={value} onChange={onChange}
+            className={defaultClass + " " + classes.sizes[size] + " " + classes.colors[color]}
             placeholder={placeholder} 
         >  
         </input>

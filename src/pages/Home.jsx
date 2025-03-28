@@ -1,9 +1,23 @@
 import React from "react"
+import { useState } from "react"
 import Button from "../components/Button"
 import Input from "../components/Input"
 import Text from "../components/Text"
+import ModalWindow from "../components/ModalWindow.jsx"
+
+
 
 function Home() {
+    const [goods, setGoods] = useState([]);
+
+    const goodsView = goods.map(el => {
+        return (
+            <p className="border-2 border-gray-500 px-2">
+                {`Название: "${el.title}", Описание: "${el.description}", Цена: ${el.price}`}
+            </p>
+        )
+    });
+
     return (
         <>
             <div className="bg-orange-100">
@@ -13,7 +27,19 @@ function Home() {
                 <Input size="medium" color="primary" placeholder="Введите"/>
                 <Input size="large" color="secondary" placeholder="Введите2"/>
                 <Text size="medium" color="secondary" text="Мой текст"/>
-                <Text size="large" color="primary" text="Мой текст2"/>
+                <div className="pt-15">
+                    <Text size="large" color="primary" text="Задание 6. Хуки"/>
+                </div>
+                
+                <div className="bg-gray-50 size-fit border-3 border-black">
+                    <p className="px-2">
+                        Список товаров:
+                    </p>
+                    {goodsView}
+                </div>
+                <div className="my-2">
+                    <ModalWindow goods={goods} setGoods={setGoods}/>
+                </div>
                 <div>Random text.</div>
                 <div>Random text.</div>
                 <div>Random text.</div>
@@ -79,7 +105,9 @@ function Home() {
             </div>
         </>
     )
+
+
+    
 };
 
-export default Home
-
+export default Home;
